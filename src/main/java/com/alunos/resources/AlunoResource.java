@@ -37,7 +37,7 @@ public class AlunoResource {
 		return ResponseEntity.ok().body(listDto);
 	}
 	
-	@RequestMapping(value="/content", method=RequestMethod.GET)
+	@RequestMapping(value="/page", method=RequestMethod.GET)
 	public ResponseEntity<Page<AlunoDTO>> findPage(
 			@RequestParam(value="page", defaultValue="0") Integer page, 
 			@RequestParam(value="linesPerPage", defaultValue="24") Integer linesPerPage, 
@@ -46,6 +46,12 @@ public class AlunoResource {
 		Page<Aluno> list = service.findPage(page, linesPerPage, orderBy, direction);
 		Page<AlunoDTO> listDto = list.map(obj -> new AlunoDTO(obj));  
 		return ResponseEntity.ok().body(listDto);
+	}
+	
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
+	public ResponseEntity<Void> delete(@PathVariable Long id) {
+		service.delete(id);
+		return ResponseEntity.noContent().build();
 	}
 	
 }

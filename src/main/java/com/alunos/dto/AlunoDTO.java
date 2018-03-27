@@ -24,9 +24,9 @@ public class AlunoDTO implements Serializable {
 	public AlunoDTO(Aluno obj) {
 		id = obj.getId();
 		nome = obj.getNome();
-		endereco = obj.getEmail();
-		email = obj.getNome();
-		telefone = obj.getNome();
+		endereco = obj.getEndereco();
+		email = obj.getEmail();
+		telefone = obj.getTelefone();
 	}
 
 	public Long getId() {
