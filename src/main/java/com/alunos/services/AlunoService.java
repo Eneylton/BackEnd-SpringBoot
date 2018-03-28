@@ -58,6 +58,9 @@ public class AlunoService {
 
 	private void updateData(Aluno newObj, Aluno obj) {
 		newObj.setNome(obj.getNome());
+		newObj.setEndereco(obj.getEndereco());
+		newObj.setEmail(obj.getEmail());
+		newObj.setTelefone(obj.getTelefone());
 	}
 	
 	public void delete(Long id) {

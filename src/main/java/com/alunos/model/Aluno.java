@@ -21,12 +21,12 @@ public class Aluno implements Serializable {
 		super();
 	}
 
-	public Aluno(Long id, String nome, String email,String endereco, String telefone) {
+	public Aluno(Long id, String nome, String endereco,String email, String telefone) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.email = email;
 		this.endereco = endereco;
+		this.email = email;
 		this.telefone = telefone;
 	}
 
